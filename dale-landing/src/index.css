@@ -1,0 +1,928 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* ============================================
+   TEMA: Español — Colores inspirados en
+   arquitectura mediterránea, adobe,
+   azulejos, sol y mar.
+   ============================================ */
+@theme {
+  /* --- Fondo general --- */
+  --color-bg: #FDF5E6;
+  --color-bg-warm: #FFF8F0;
+  --color-bg-cool: #F0EBE3;
+
+  /* --color-- Surface / tarjeta --- */
+  --color-surface: #FFFFFF;
+
+ --color-surface-alt: #FFFDF7;
+
+  /* --- Border --- */
+  --color-border: #D5C5B0;
+  --color-border-light: #E8DDD0;
+
+  /* --color-- Card --color-- */
+  --color-card: #FFFFFF;
+  --color-card-shadow: rgba(92, 64, 40, 0.08);
+
+  /* --color-- Glass --color-- */
+  --color-glass: rgba(255, 255, 255, 0.55);
+  --color-glass-border: rgba(255, 255, 255, 0.4);
+  --color-glass-shadow: rgba(92, 64, 40, 0.06);
+
+  /* --color-- Primary (Terracotta / Rojo español) --color-- */
+  --color-primary: #C0392B;
+  --color-primary-light: #E74C3C;
+  --color-primary-dark: #922B21;
+  --color-primary-100: #FADBD8;
+  --color-primary-200: #F1948A;
+  --color-primary-300: #E6B0AA;
+  --color-primary-400: #D4A373;
+  --color-primary-glow: rgba(192, 57, 43, 0.25);
+
+  /* --color-- Button --color-- */
+  --color-btn: #C0392B;
+  --color-btn-hover: #922B21;
+  --color-btn-text: #FFFFFF;
+
+  /* --color-- Hover (Primary hover) --color-- */
+  --color-hover: #922B21;
+  --color-hover-glow: rgba(146, 43, 33, 0.3);
+
+  /* --color-- Secondary (Mediterranean blue) --color-- */
+  --color-secondary: #1A5276;
+  --color-secondary-light: #2E86C1;
+  --color-secondary-dark: #154360;
+  --color-secondary-100: #D4E6F1;
+  --color-secondary-200: #AED6F1;
+  --color-secondary-300: #85C1E9;
+  --color-secondary-glow: rgba(26, 82, 118, 0.2);
+
+  /* --color-- Hover Secondary --color-- */
+  --color-hover-secondary: #154360;
+  --color-hover-secondary-glow: rgba(21, 67, 96, 0.3);
+
+  /* --color-- Accent (Saffron / Sunset orange) --color-- */
+  --color-accent: #E67E22;
+  --color-accent-light: #F39C12;
+  --color-accent-dark: #D35400;
+  --color-accent-100: #FDEBD0;
+  --color-accent-200: #FAD7A0;
+  --color-accent-300: #F5CBA7;
+  --color-accent-glow: rgba(230, 126, 34, 0.25);
+
+  /* --color-- Hover Accent --color-- */
+  --color-hover-accent: #D35400;
+  --color-hover-accent-glow: rgba(211, 84, 0, 0.3);
+
+  /* --color-- Text --color-- */
+  --color-text: #2C1810;
+  --color-text-light: #5D4E3D;
+  --color-muted: #8B7D6B;
+  --color-muted-light: #B8A99A;
+
+  /* --color-- Página fondo --color-- */
+  --color-page-bg: #FDF5E6;
+}
+
+:root {
+  --bg: var(--color-bg);
+  --bg-warm: var(--color-bg-warm);
+  --bg-cool: var(--color-bg-cool);
+  --surface: var(--color-surface);
+  --surface-alt: var(--color-surface-alt);
+  --border: var(--color-border);
+  --border-light: var(--color-border-light);
+  --card: var(--color-card);
+  --card-shadow: var(--color-card-shadow);
+  --glass: var(--color-glass);
+  --glass-border: var(--color-glass-border);
+  --glass-shadow: var(--color-glass-shadow);
+  --primary: var(--color-primary);
+  --primary-light: var(--color-primary-light);
+  --primary-dark: var(--color-primary-dark);
+  --primary-100: var(--color-primary-100);
+  --primary-200: var(--color-primary-200);
+  --primary-300: var(--color-primary-300);
+  --primary-400: var(--color-primary-400);
+  --primary-glow: var(--color-primary-glow);
+  --btn: var(--color-btn);
+  --btn-hover: var(--color-btn-hover);
+  --btn-text: var(--color-btn-text);
+  --hover: var(--color-hover);
+  --hover-glow: var(--color-hover-glow);
+  --secondary: var(--color-secondary);
+  --secondary-light: var(--color-secondary-light);
+  --secondary-dark: var(--color-secondary-dark);
+  --secondary-100: var(--color-secondary-100);
+  --secondary-200: var(--color-secondary-200);
+  --secondary-300: var(--color-secondary-300);
+  --secondary-glow: var(--color-secondary-glow);
+  --hover-secondary: var(--color-hover-secondary);
+  --hover-secondary-glow: var(--color-hover-secondary-glow);
+  --accent: var(--color-accent);
+  --accent-light: var(--color-accent-light);
+  --accent-dark: var(--color-accent-dark);
+  --accent-100: var(--color-accent-100);
+  --accent-200: var(--color-accent-200);
+  --accent-300: var(--color-accent-300);
+  --accent-glow: var(--color-accent-glow);
+  --hover-accent: var(--color-hover-accent);
+  --hover-accent-glow: var(--color-hover-accent-glow);
+  --text: var(--color-text);
+  --text-light: var(--color-text-light);
+  --muted: var(--color-muted);
+  --muted-light: var(--color-muted-light);
+  --page-bg: var(--color-page-bg);
+}
+
+/* ============================================
+   MODO OSCURO
+   Clase .dark en <html>
+   ============================================ */
+.dark {
+  --color-bg: #1A1210;
+  --color-bg-warm: #221A16;
+  --color-bg-cool: #1E1914;
+
+  --color-surface: #2C231E;
+  --color-surface-alt: #332B25;
+
+  --color-border: #5C4A3A;
+  --color-border-light: #4A3B2F;
+
+  --color-card: #2C231E;
+  --color-card-shadow: rgba(0, 0, 0, 0.3);
+
+  --color-glass: rgba(44, 35, 30, 0.6);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-shadow: rgba(0, 0, 0, 0.4);
+
+  --color-primary: #E74C3C;
+  --color-primary-light: #F1948A;
+  --color-primary-dark: #C0392B;
+  --color-primary-100: #5C1A16;
+  --color-primary-200: #7A2520;
+  --color-primary-300: #944040;
+  --color-primary-400: #B8735A;
+  --color-primary-glow: rgba(231, 76, 60, 0.3);
+
+  --color-btn: #E74C3C;
+  --color-btn-hover: #C0392B;
+  --color-btn-text: #FFFFFF;
+
+  --color-hover: #C0392B;
+  --color-hover-glow: rgba(231, 76, 60, 0.35);
+
+  --color-secondary: #2E86C1;
+  --color-secondary-light: #5DADE2;
+  --color-secondary-dark: #1A5276;
+  --color-secondary-100: #154360;
+  --color-secondary-200: #1A5276;
+  --color-secondary-300: #2471A3;
+  --color-secondary-glow: rgba(46, 134, 193, 0.25);
+
+  --color-hover-secondary: #5DADE2;
+  --color-hover-secondary-glow: rgba(93, 173, 226, 0.3);
+
+  --color-accent: #F39C12;
+  --color-accent-light: #F5B041;
+  --color-accent-dark: #E67E22;
+  --color-accent-100: #5C3A1A;
+  --color-accent-200: #7A5020;
+  --color-accent-300: #946830;
+  --color-accent-glow: rgba(243, 156, 18, 0.3);
+
+  --color-hover-accent: #F5B041;
+  --color-hover-accent-glow: rgba(245, 176, 65, 0.35);
+
+  --color-text: #F0E8DD;
+  --color-text-light: #C4B5A0;
+  --color-muted: #A09080;
+  --color-muted-light: #7A6E5E;
+
+  --color-page-bg: #1A1210;
+}
+
+/* ============================================
+   MODO CLARO forzado
+   Clase .light en <html>
+   ============================================ */
+.light {
+  --color-bg: #FDF5E6;
+  --color-bg-warm: #FFF8F0;
+  --color-bg-cool: #F0EBE3;
+
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #FFFDF7;
+
+  --color-border: #D5C5B0;
+  --color-border-light: #E8DDD0;
+
+  --color-card: #FFFFFF;
+  --color-card-shadow: rgba(92, 64, 40, 0.08);
+
+  --color-glass: rgba(255, 255, 255, 0.55);
+  --color-glass-border: rgba(255, 255, 255, 0.4);
+  --color-glass-shadow: rgba(92, 64, 40, 0.06);
+
+  --color-primary: #C0392B;
+  --color-primary-light: #E74C3C;
+  --color-primary-dark: #922B21;
+  --color-primary-100: #FADBD8;
+  --color-primary-200: #F1948A;
+  --color-primary-300: #E6B0AA;
+  --color-primary-400: #D4A373;
+  --color-primary-glow: rgba(192, 57, 43, 0.25);
+
+  --color-btn: #C0392B;
+  --color-btn-hover: #922B21;
+  --color-btn-text: #FFFFFF;
+
+  --color-hover: #922B21;
+  --color-hover-glow: rgba(146, 43, 33, 0.3);
+
+  --color-secondary: #1A5276;
+  --color-secondary-light: #2E86C1;
+  --color-secondary-dark: #154360;
+  --color-secondary-100: #D4E6F1;
+  --color-secondary-200: #AED6F1;
+  --color-secondary-300: #85C1E9;
+  --color-secondary-glow: rgba(26, 82, 118, 0.2);
+
+  --color-hover-secondary: #154360;
+  --color-hover-secondary-glow: rgba(21, 67, 96, 0.3);
+
+  --color-accent: #E67E22;
+  --color-accent-light: #F39C12;
+  --color-accent-dark: #D35400;
+  --color-accent-100: #FDEBD0;
+  --color-accent-200: #FAD7A0;
+  --color-accent-300: #F5CBA7;
+  --color-accent-glow: rgba(230, 126, 34, 0.25);
+
+  --color-hover-accent: #D35400;
+  --color-hover-accent-glow: rgba(211, 84, 0, 0.3);
+
+  --color-text: #2C1810;
+  --color-text-light: #5D4E3D;
+  --color-muted: #8B7D6B;
+  --color-muted-light: #B8A99A;
+
+  --color-page-bg: #FDF5E6;
+}
+
+/* ============================================
+   DETECCIÓN AUTOMÁTICA
+   prefers-color-scheme: dark
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1A1210;
+    --bg-warm: #221A16;
+    --bg-cool: #1E1914;
+
+    --surface: #2C231E;
+    --surface-alt: #332B25;
+
+    --border: #5C4A3A;
+    --border-light: #4A3B2F;
+
+    --card: #2C231E;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+
+    --glass: rgba(44, 35, 30, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: rgba(0, 0, 0, 0.4);
+
+    --primary: #E74C3C;
+    --primary-light: #F1948A;
+    --primary-dark: #C0392B;
+    --primary-100: #5C1A16;
+    --primary-glow: rgba(231, 76, 60, 0.3);
+
+    --btn: #E74C3C;
+    --btn-hover: #C0392B;
+
+    --hover: #C0392B;
+    --hover-glow: rgba(231, 76, 60, 0.35);
+
+    --secondary: #2E86C1;
+    --secondary-light: #5DADE2;
+    --secondary-glow: rgba(46, 134, 193, 0.25);
+
+    --hover-secondary: #5DADE2;
+    --hover-secondary-glow: rgba(93, 173, 226, 0.3);
+
+    --accent: #F39C12;
+    --accent-light: #F5B041;
+    --accent-glow: rgba(243, 156, 18, 0.3);
+
+    --hover-accent: #F5B041;
+    --hover-accent-glow: rgba(245, 176, 65, 0.35);
+
+    --text: #F0E8DD;
+    --text-light: #C4B5A0;
+    --muted: #A09080;
+    --muted-light: #7A6E5E;
+
+    --page-bg: #1A1210;
+
+    --color-bg: #1A1210;
+    --color-bg-warm: #221A16;
+    --color-bg-cool: #1E1914;
+    --color-surface: #2C231E;
+    --color-surface-alt: #332B25;
+    --color-border: #5C4A3A;
+    --color-border-light: #4A3B2F;
+    --color-card: #2C231E;
+    --color-card-shadow: rgba(0, 0, 0, 0.3);
+    --color-glass: rgba(44, 35, 30, 0.6);
+    --color-glass-border: rgba(255, 255, 255, 0.08);
+    --color-glass-shadow: rgba(0, 0, 0, 0.4);
+    --color-primary: #E74C3C;
+    --color-primary-light: #F1948A;
+    --color-primary-dark: #C0392B;
+    --color-primary-100: #5C1A16;
+    --color-primary-200: #7A2520;
+    --color-primary-300: #944040;
+    --color-primary-400: #B8735A;
+    --color-primary-glow: rgba(231, 76, 60, 0.3);
+    --color-btn: #E74C3C;
+    --color-btn-hover: #C0392B;
+    --color-btn-text: #FFFFFF;
+    --color-hover: #C0392B;
+    --color-hover-glow: rgba(231, 76, 60, 0.35);
+    --color-secondary: #2E86C1;
+    --color-secondary-light: #5DADE2;
+    --color-secondary-dark: #1A5276;
+    --color-secondary-100: #154360;
+    --color-secondary-200: #1A5276;
+    --color-secondary-300: #2471A3;
+    --color-secondary-glow: rgba(46, 134, 193, 0.25);
+    --color-hover-secondary: #5DADE2;
+    --color-hover-secondary-glow: rgba(93, 173, 226, 0.3);
+    --color-accent: #F39C12;
+    --color-accent-light: #F5B041;
+    --color-accent-dark: #E67E22;
+    --color-accent-100: #5C3A1A;
+    --color-accent-200: #7A5020;
+    --color-accent-300: #946830;
+    --color-accent-glow: rgba(243, 156, 18, 0.3);
+    --color-hover-accent: #F5B041;
+    --color-hover-accent-glow: rgba(245, 176, 65, 0.35);
+    --color-text: #F0E8DD;
+    --color-text-light: #C4B5A0;
+    --color-muted: #A09080;
+    --color-muted-light: #7A6E5E;
+    --color-page-bg: #1A1210;
+  }
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes meshShift {
+  0%   { background-position: 0% 0%, 100% 0%, 50% 100%; }
+  33%  { background-position: 100% 0%, 0% 100%, 50% 0%; }
+  66%  { background-position: 50% 100%, 50% 50%, 0% 0%; }
+  100% { background-position: 0% 0%, 100% 0%, 50% 100%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--primary-glow); }
+  50%      { box-shadow: 0 0 40px var(--primary-glow), 0 0 80px var(--primary-glow); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ============================================
+   UTILIDADES DE FONDO
+   ============================================ */
+
+/* — Fondo de página general — */
+.bg-page {
+  background-color: var(--bg);
+}
+
+/* — Gradiente animado (primario → secundario → acento) — */
+.bg-animated-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+
+/* — Fondo de hero con gradiente animado — */
+.bg-hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 30%, var(--secondary) 70%, var(--accent) 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* — Mesh background (multi-color overlapping gradient) — */
+.bg-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, var(--primary-glow) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, var(--secondary-glow) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, var(--accent-glow) 0%, transparent 50%),
+    linear-gradient(135deg, var(--bg) 0%, var(--bg-cool) 100%);
+  background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
+  animation: meshShift 12s ease infinite;
+}
+
+/* — Mesh background para hero — */
+.bg-mesh-hero {
+  background:
+    radial-gradient(ellipse at 30% 40%, var(--primary-glow) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 60%, var(--secondary-glow) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 20%, var(--accent-glow) 0%, transparent 50%),
+    linear-gradient(160deg, var(--primary-dark) 0%, var(--secondary-dark) 50%, var(--accent-dark) 100%);
+  background-size: 300% 300%, 300% 300%, 300% 300%, 100% 100%;
+  animation: meshShift 10s ease infinite;
+}
+
+/* — Gradiente primario → secundario — */
+.bg-gradient-primary-secondary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+/* — Gradiente primario → acento — */
+.bg-gradient-primary-accent {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+/* — Gradiente secundario → acento — */
+.bg-gradient-secondary-accent {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+}
+
+/* — Gradiente cálido (adobe / sol) — */
+.bg-gradient-warm {
+  background: linear-gradient(135deg, var(--primary-400), var(--accent), var(--accent-light));
+}
+
+/* — Degradado con shimmer (para badges / tags) — */
+.bg-shimmer {
+  background: linear-gradient(90deg, var(--primary-100) 25%, var(--primary-300) 50%, var(--primary-100) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease infinite;
+}
+
+/* ============================================
+   UTILIDADES DE SUPERFICIE / CARD
+   ============================================ */
+
+/* — Card base — */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px var(--card-shadow);
+  overflow: hidden;
+}
+
+/* — Card elevada — */
+.card-elevated {
+  background-color: var(--card);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: 0 8px 40px var(--card-shadow), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* — Card con borde primario — */
+.card-bordered {
+  background-color: var(--card);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px var(--primary-glow);
+}
+
+/* — Surface (nivel superior) — */
+.surface {
+  background-color: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+
+/* — Surface alternativa — */
+.surface-alt {
+  background-color: var(--surface-alt);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+
+/* ============================================
+   UTILIDADES DE GLASS / VIDRIERA
+   ============================================ */
+
+/* — Glass claro — */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px var(--glass-shadow);
+}
+
+/* — Glass oscuro (más opaco) — */
+.glass-dark {
+  background: rgba(44, 35, 30, 0.65);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* — Glass con borde primario — */
+.glass-bordered {
+  background: var(--glass);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  box-shadow: 0 8px 32px var(--glass-shadow), inset 0 0 0 1px var(--primary-glow);
+}
+
+/* — Variantes oscuras de glass (cuando .dark está en html) — */
+.dark .glass {
+  background: rgba(44, 35, 30, 0.55);
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.dark .glass-dark {
+  background: rgba(20, 14, 10, 0.7);
+  border-color: rgba(255, 255, 255, 0.04);
+}
+
+.dark .glass-bordered {
+  background: rgba(44, 35, 30, 0.6);
+  border-color: rgba(231, 76, 60, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(231, 76, 60, 0.2);
+}
+
+.light .glass {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.light .glass-dark {
+  background: rgba(26, 18, 16, 0.5);
+}
+
+.light .glass-bordered {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(192, 57, 43, 0.2);
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+/* — Botón primario — */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+/* — Botón primario (relleno) — */
+.btn-primary {
+  background-color: var(--btn);
+  color: var(--btn-text);
+  border-color: var(--btn);
+  box-shadow: 0 4px 14px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  background-color: var(--btn-hover);
+  border-color: var(--btn-hover);
+  box-shadow: 0 6px 20px var(--hover-glow);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px var(--primary-glow);
+}
+
+/* — Botón secundario (outline) — */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px var(--secondary-glow);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* — Botón de acento — */
+.btn-accent {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+.btn-accent:hover {
+  background-color: var(--hover-accent);
+  border-color: var(--hover-accent);
+  box-shadow: 0 6px 20px var(--hover-accent-glow);
+  transform: translateY(-1px);
+}
+
+.btn-accent:active {
+  transform: translateY(0);
+}
+
+/* — Botón ghost (sin fondo) — */
+.btn-ghost {
+  background-color: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn-ghost:hover {
+  background-color: var(--primary-100);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* — Tamaños de botón — */
+.btn-sm {
+  padding: 0.375rem 1rem;
+  font-size: 0.8125rem;
+  border-radius: 6px;
+}
+
+.btn-lg {
+  padding: 0.875rem 2rem;
+  font-size: 1.0625rem;
+  border-radius: 10px;
+}
+
+/* — Botón con glow animado (para CTAs hero) — */
+.btn-glow {
+  animation: pulse-glow 2.5s ease infinite;
+}
+
+.btn-glow:hover {
+  animation: none;
+  box-shadow: 0 8px 30px var(--hover-glow);
+}
+
+/* ============================================
+   BORDES
+   ============================================ */
+
+/* — Borde con color primario — */
+.border-primary {
+  border-color: var(--primary);
+}
+
+/* — Borde con degradado (primario → acento) — */
+.border-gradient {
+  border-image: linear-gradient(135deg, var(--primary), var(--accent)) 1;
+  border-style: solid;
+  border-width: 2px;
+}
+
+/* — Borde secundario — */
+.border-secondary {
+  border-color: var(--secondary);
+}
+
+/* — Borde de acento — */
+.border-accent {
+  border-color: var(--accent);
+}
+
+/* — Borde con hover animado (efecto subrayado) — */
+.border-hover {
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.border-hover:hover {
+  border-bottom-color: var(--primary);
+}
+
+/* ============================================
+   TEXTO
+   ============================================ */
+.text-muted {
+  color: var(--muted);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+/* ============================================
+   UTILIDADES DE HOVER
+   ============================================ */
+
+/* — Hover con elevación — */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px var(--card-shadow);
+}
+
+/* — Hover con glow primario — */
+.hover-glow-primary:hover {
+  box-shadow: 0 0 24px var(--primary-glow);
+}
+
+/* — Hover con glow secundario — */
+.hover-glow-secondary:hover {
+  box-shadow: 0 0 24px var(--secondary-glow);
+}
+
+/* — Hover con glow de acento — */
+.hover-glow-accent:hover {
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+/* ============================================
+   HERO / PÁGINA COMPLETA
+   ============================================ */
+
+/* — Hero full-viewport — */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* — Hero con mesh background — */
+.hero-mesh {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 40%, var(--primary-glow) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 60%, var(--secondary-glow) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 20%, var(--accent-glow) 0%, transparent 50%),
+    linear-gradient(160deg, var(--primary-dark) 0%, var(--secondary-dark) 50%, var(--accent-dark) 100%);
+  background-size: 300% 300%, 300% 300%, 300% 300%, 100% 100%;
+  animation: meshShift 10s ease infinite;
+}
+
+/* — Hero con gradiente animado — */
+.hero-gradient {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 30%, var(--secondary) 70%, var(--accent) 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* — Overlay para hero (para texto encima) — */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* — Contenido del hero (relativo para quedar sobre overlay) — */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   SECCIÓN / DIVISOR
+   ============================================ */
+.section {
+  padding: 5rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-narrow {
+  padding: 3rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* — Divisor con gradiente — */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), var(--accent), transparent);
+  border: none;
+}
+
+/* ============================================
+   BADGE / TAG
+   ============================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge-primary {
+  background-color: var(--primary-100);
+  color: var(--primary-dark);
+}
+
+.badge-secondary {
+  background-color: var(--secondary-100);
+  color: var(--secondary-dark);
+}
+
+.badge-accent {
+  background-color: var(--accent-100);
+  color: var(--accent-dark);
+}
+
+/* ============================================
+   IMAGENES CON BORDE REDONDO
+   ============================================ */
+.img-card {
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.img-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   NAV / HEADER
+   ============================================ */
+.nav-glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+}
